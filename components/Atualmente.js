@@ -25,19 +25,19 @@ export default function Atualmente() {
             
             const cardContainer = document.getElementById("card-container");
             cardContainer.appendChild(card);
-        
-            if(i==0){
-                var text = document.createElement("div");
-                text.id = "Titulo-Hierarquia"
-                text.innerHTML = "Ensaiador FRACAE";
-                text.style.marginTop = "20px";
-                cardContainer.appendChild(text);
+            
+            if (i == 0){
+              var text = document.createElement("div");
+              text.id = "Titulo-Hierarquia"
+              text.innerHTML = "Tesoureiro FRACAE";
+              text.style.marginTop = "30px";
+              cardContainer.appendChild(text);
             }
-        
-            if (i == 1){
+
+            if(i == 1){
                 var text = document.createElement("div");
                 text.id = "Titulo-Hierarquia"
-                text.innerHTML = "Tarefeiro FRACAE";
+                text.innerHTML = "Atuador FRACAE";
                 text.style.marginTop = "20px";
                 cardContainer.appendChild(text);
             }
@@ -45,8 +45,7 @@ export default function Atualmente() {
             if (i == 2){
                 var text = document.createElement("div");
                 text.id = "Titulo-Hierarquia"
-                text.innerHTML = "Atuador FRACAE";
-                text.style.marginBottom = "20px";
+                text.innerHTML = "Ensaiador FRACAE";
                 text.style.marginTop = "20px";
                 cardContainer.appendChild(text);
             }
@@ -54,10 +53,27 @@ export default function Atualmente() {
             if (i == 3){
                 var text = document.createElement("div");
                 text.id = "Titulo-Hierarquia"
-                text.innerHTML = "Caloiros";
+                text.innerHTML = "Tarefeiro FRACAE";
+                text.style.marginBottom = "20px";
                 text.style.marginTop = "20px";
                 cardContainer.appendChild(text);
             }
+        
+            if (i == 4){
+                var text = document.createElement("div");
+                text.id = "Titulo-Hierarquia"
+                text.innerHTML = "RP";
+                text.style.marginTop = "20px";
+                cardContainer.appendChild(text);
+            }
+
+            if (i == 5){
+              var text = document.createElement("div");
+              text.id = "Titulo-Hierarquia"
+              text.innerHTML = "Caloiros";
+              text.style.marginTop = "20px";
+              cardContainer.appendChild(text);
+          }
         }
    
         setData(parsedData);

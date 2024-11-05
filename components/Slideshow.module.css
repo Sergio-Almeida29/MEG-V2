@@ -20,7 +20,8 @@
 }
 
 .arrow {
-  background: none;
+  background: url('2_blur.jpg') no-repeat center center;
+  background-size: cover;
   border: none;
   font-size: 2em;
   cursor: pointer;
