@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
-html,
-body {
-  padding: 0;
+html{
+padding: 0;
   margin: 0;
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
-  height: 100%;
+  min-height: 100vh;
   background-image: url('https://cdn.discordapp.com/attachments/1162486744223068184/1303402630562713710/2_blur.jpg?ex=672b9fcb&is=672a4e4b&hm=5064e65f5bff2ec1a7a8367756f14ce56f97071081c5428e3436998f7e77d6fd&');
   background-position: center;
   background-repeat: no-repeat;
@@ -17,21 +16,16 @@ body {
   box-sizing: border-box;
 }
 
-main {
-  padding: 5rem 0;
+.container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.container {
-  padding-top: 4em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+main {
+  width: 100%;
 }
 
 
