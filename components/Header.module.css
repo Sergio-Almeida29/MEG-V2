@@ -1,0 +1,75 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 7em;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Add padding for better spacing */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #633723; /* Add a background color if needed */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+  
+.logoContainer {
+  flex-grow: 0; /* Logo takes as much space as possible on the left */
+}
+  
+.logo {
+  height: 6em;
+  padding: 0.5em;
+}
+  
+.menuContainer {
+  cursor: pointer;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em; /* Add padding for better spacing */
+  margin-right: 1em; /* Add margin to separate from other elements */
+  color: #333; /* Text color */
+  background-color: #ddd; /* Background color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.menu {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.menu.open {
+  display: flex;
+  max-height: 30em; /* Set a reasonable max-height or adjust as needed */
+}
+
+.dropdownMenu {
+  position: absolute; /* Position the dropdown absolutely */
+  top: calc(100%); /* Position it below the button */
+  right: 0; /* Align it to the right */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  margin-top: 0.5em; /* Add margin to separate from the button */
+  color: #333;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  color: #ddd;
+  border-radius: 5px;
+
+}

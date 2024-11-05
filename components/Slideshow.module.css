@@ -1,0 +1,31 @@
+.slideshow {
+  position: relative;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border: 1px solid #eaeaea;
+}
+  
+.navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+

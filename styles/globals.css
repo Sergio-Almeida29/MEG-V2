@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  height: 100%;
+  background: url('/public/2_blur.jpg') no-repeat fixed;
+  background-position: center;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #2e2e2ed6;
+  padding-top: 4em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+#Lateral {
+  max-width: 100%;
+  margin : 0 auto;
+  padding-top: 50px;
+  grid-column: 1 / 2;
+}
+
+#conteudo {
+  background-color: #1e1c1bd6;
+  margin: auto auto auto auto;
+  padding: 30px;
+  box-shadow: 0px 0px 10px black;
+  grid-column: 2 / 3;
+}
+
+#Principal > h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p:not(.card-nomeCaloiro):not(.card-nomeCivil):not(.card-nomeTuna):not(.card-instrumento) {
+  text-indent: 40px;
+  text-align: justify;
+  margin: 0 5em 0 5em;
+  color: #FFFFFF;
+}
+
+h1 {
+  color: #FFFFFF;
+}
+
+h1 #title {
+  margin: 0 5em 2em 5em;
+  color: #FFFFFF;
+}
+
+h2 {
+  color: #FFFFFF;
+}
+
+h3 {
+  margin: 2em 5em 2em 5em;
+  color: #FFFFFF;
+}
+
+h4 {
+  margin: 0 5em 0 5em;
+  color: #FFFFFF;
+}
+
+.card-container {
+  display: flex;
+  background-color: #333;
+  width: 100%;
+  padding: 1em;
+  color: #888;
+  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  clear: both;
+  line-height: 1em;
+  box-shadow: 2px 2px 2px black;
+}
+
+.card-imagem_pessoal{
+  width: 3.5em;
+  height: 4.5em;
+  position: flex;
+  margin: 10px 0 0;
+  border-radius: 5px;
+}
+
+.card-nomeTuna{
+  font-size: 1em;
+  font-weight: bold;
+  color: #DDD;
+}
+
+.card-nomeCaloiro{
+  font-size: 0.7em;
+  font-weight: bold;
+  font-style: italic;
+  color: #888;
+  text-align: left;
+}
+
+.card-nomeCivil{
+  font-size: 0.5em;
+  font-weight: bold;
+  color: #888;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.card-container p {
+  text-indent: 0;
+}
+
+#Titulo-Hierarquia {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: #666 dotted 1px;
+  text-shadow: 2px 2px 5px black; 
+}
+
+.card-imagem_lateral{
+  width: 3.5em;
+  height: 4.5em;
+  position: flex;
+  margin: 10px 0 0;
+  border-radius: 5px;
+}
+
+.card-instrumento{
+  font-size: 0.5em;
+  font-weight: bold;
+  color: #DDD;
+  margin : 0;
+}
+
+img {
+  margin: 3em 0 3em 0;
+}
+
+.responsive-iframe-container {
+  display: flex;
+  justify-content: center; /* Align content horizontally to the center */
+  margin-bottom: 20px; /* Add margin to create space between iframes */
+}
+
+.responsive-iframe-container iframe {
+  max-width: 100%; /* Ensure iframe doesn't exceed its container's width */
+}
+
+ul {
+  list-style-type: none; /* Remove default list-style */
+  padding: 0; /* Remove default padding */
+}
+
+#file a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Change anchor text color */
+}
+
+#file a:hover{
+  color: grey; /* Change anchor text color on hover */
+}
+
+ul li a {
+  text-decoration: none; /* Remove underline */
+  color: black; /* Change anchor text color */
+}
+
+ul li a:hover {
+  color: grey; /* Change anchor text color on hover */
+}
+
