@@ -7,10 +7,6 @@ body {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   height: 100%;
-  background: url('/public/2_blur.jpg') no-repeat fixed;
-  background-position: center;
-  background-position-y: 0px;
-  background-repeat: no-repeat;
 }
 
 * {
@@ -26,7 +22,7 @@ main {
 }
 
 .container {
-  background: url('/public/2_blur.jpg') no-repeat fixed;
+  background-image: url('/public/2_blur.jpg');
   background-position: center;
   background-position-y: 0px;
   background-repeat: no-repeat;
