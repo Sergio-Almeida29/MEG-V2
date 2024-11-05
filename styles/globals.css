@@ -7,6 +7,10 @@ body {
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   height: 100%;
+  background-image: url('https://cdn.discordapp.com/attachments/1162486744223068184/1303402630562713710/2_blur.jpg?ex=672b9fcb&is=672a4e4b&hm=5064e65f5bff2ec1a7a8367756f14ce56f97071081c5428e3436998f7e77d6fd&');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 * {
@@ -22,12 +26,7 @@ main {
 }
 
 .container {
-  background-image: url('https://cdn.discordapp.com/attachments/1162486744223068184/1303402630562713710/2_blur.jpg?ex=672b9fcb&is=672a4e4b&hm=5064e65f5bff2ec1a7a8367756f14ce56f97071081c5428e3436998f7e77d6fd&');
-  background-position: center;
-  background-position-y: 0px;
-  background-repeat: no-repeat;
   padding-top: 4em;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
