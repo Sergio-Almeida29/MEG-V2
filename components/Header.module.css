@@ -2,65 +2,82 @@
   position: fixed;
   width: 100%;
   height: 7em;
-  border-bottom: 1px solid #eaeaea;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Add padding for better spacing */
-  position: fixed;
+  padding: 0 20px;
   top: 0;
   left: 0;
-  background-color: #633723; /* Add a background color if needed */
-  z-index: 1000; /* Ensure it's above other elements */
+  background-color: #633723;
+  border-bottom: 1px solid #eaeaea;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-  
+
 .logoContainer {
-  flex-grow: 0; /* Logo takes as much space as possible on the left */
+  flex-grow: 0;
 }
-  
+
 .logo {
   height: 6em;
   padding: 0.5em;
 }
-  
+
 .menuContainer {
   cursor: pointer;
   font-size: 1.5em;
-  display: flex;
-  flex-direction: column; /* Align items vertically */
-  align-items: center;
-  justify-content: center;
-  padding: 0.5em; /* Add padding for better spacing */
-  margin-right: 1em; /* Add margin to separate from other elements */
-  color: #333; /* Text color */
-  background-color: #ddd; /* Background color */
-  border-radius: 5px; /* Rounded corners */
+  padding: 0.5em;
+  margin-right: 1em;
+  color: #fff;
+  background-color: #333;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.menu {
-  display: none;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-
-.menu.open {
-  display: flex;
-  max-height: 30em; /* Set a reasonable max-height or adjust as needed */
+.menuContainer:hover {
+  background-color: #555;
 }
 
 .dropdownMenu {
-  position: absolute; /* Position the dropdown absolutely */
-  top: calc(100%); /* Position it below the button */
-  right: 0; /* Align it to the right */
+  position: absolute;
+  top: calc(100%);
+  right: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.5em;
-  margin-top: 0.5em; /* Add margin to separate from the button */
-  color: #333;
   background-color: #ddd;
   border-radius: 5px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropdownMenu.open {
+  max-height: 20em; /* Adjust as needed */
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdownMenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownMenu li {
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdownMenu li:hover {
+  background-color: #bbb;
+}
+
+.dropdownMenu a {
+  text-decoration: none;
+  color: #333;
 }
 
 .titleContainer {
@@ -68,8 +85,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.5em;
   color: #ddd;
-  border-radius: 5px;
-
+  padding: 0.5em;
+  font-size: 1.2em;
+  text-align: center;
 }

@@ -26,7 +26,7 @@ export default function Atualmente() {
             const cardContainer = document.getElementById("card-container");
             cardContainer.appendChild(card);
             
-            if (i == 0){
+            if (i == -1){
               var text = document.createElement("div");
               text.id = "Titulo-Hierarquia"
               text.innerHTML = "Tesoureiro FRACAE";
@@ -34,7 +34,7 @@ export default function Atualmente() {
               cardContainer.appendChild(text);
             }
 
-            if(i == 1){
+            if(i == 0){
                 var text = document.createElement("div");
                 text.id = "Titulo-Hierarquia"
                 text.innerHTML = "Atuador FRACAE";
@@ -42,7 +42,7 @@ export default function Atualmente() {
                 cardContainer.appendChild(text);
             }
         
-            if (i == 2){
+            if (i == 1){
                 var text = document.createElement("div");
                 text.id = "Titulo-Hierarquia"
                 text.innerHTML = "Ensaiador FRACAE";
@@ -50,7 +50,7 @@ export default function Atualmente() {
                 cardContainer.appendChild(text);
             }
         
-            if (i == 3){
+            if (i == 2){
                 var text = document.createElement("div");
                 text.id = "Titulo-Hierarquia"
                 text.innerHTML = "Tarefeiro FRACAE";
@@ -59,7 +59,7 @@ export default function Atualmente() {
                 cardContainer.appendChild(text);
             }
         
-            if (i == 4){
+            if (i == 3){
                 var text = document.createElement("div");
                 text.id = "Titulo-Hierarquia"
                 text.innerHTML = "RP";
@@ -67,7 +67,7 @@ export default function Atualmente() {
                 cardContainer.appendChild(text);
             }
 
-            if (i == 5){
+            if (i == 4){
               var text = document.createElement("div");
               text.id = "Titulo-Hierarquia"
               text.innerHTML = "Caloiros";
