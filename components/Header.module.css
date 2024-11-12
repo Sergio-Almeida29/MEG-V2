@@ -29,22 +29,26 @@
   padding: 0.5em 0 0.5em;
 }
 
-/* Menu container with rotating icon */
+/* Menu container */
 .menuContainer {
   cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 0.5em;
   color: #333;
   background-color: #ddd;
   border-radius: 5px;
+}
+
+.menuIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: transform 0.3s ease; /* Smooth rotation */
 }
 
-.menuContainer.rotate {
-  transform: rotate(90deg); /* Rotate 90 degrees when clicked */
+.menuIcon.rotate {
+  transform: rotate(180deg); /* Rotate only the stripes 180 degrees */
 }
 
 .menuLine {
@@ -57,9 +61,8 @@
 /* Dropdown menu styling */
 .dropdownMenu {
   position: absolute;
-  top: 100%;
-  align-items: center;
-  margin: 0.5em 5em 0 0;
+  top: 100%; /* Align it below the menu icon */
+  left: 0; /* Center the dropdown to the left */
   color: #333;
   background-color: #ddd;
   border-radius: 5px;

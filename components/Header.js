@@ -20,15 +20,15 @@ export default function Header() {
       </div>
 
       {/* Rotating menu icon */}
-      <div 
-        className={`${styles.menuContainer} ${isMenuOpen ? styles.rotate : ''}`} 
-        onClick={toggleMenu}
-      >
-        <div className={styles.menuLine}></div>
-        <div className={styles.menuLine}></div>
-        <div className={styles.menuLine}></div>
+      <div className={styles.menuContainer} onClick={toggleMenu}>
+        <div className={`${styles.menuIcon} ${isMenuOpen ? styles.rotate : ''}`}>
+          <div className={styles.menuLine}></div>
+          <div className={styles.menuLine}></div>
+          <div className={styles.menuLine}></div>
+        </div>
       </div>
 
+      {/* Dropdown menu */}
       <div className={`${styles.dropdownMenu} ${isMenuOpen ? styles.open : ''}`}>
         <ul>
           <li><a href="/historia">História</a></li>
@@ -39,7 +39,7 @@ export default function Header() {
           <li><a href="/discografia">Discografia</a></li>
         </ul>
       </div>
-      
+
     </header>
   );
 }
