@@ -24,7 +24,7 @@ export default function Home() {
           <li id="file">
             <h3><a href="/sebenta.pdf" download="Sebenta da FRAC.pdf" type="application/pdf" target="_blank">Sebenta da FRAC</a></h3></li>
           <li id="file">
-            <h3><a href="https://docs.google.com/spreadsheets/d/1FRZu41QwWBXEbZZBvhqn4p_dWReSy8ZBYFOup6j1k0s/edit?usp=sharing" target="_blank">Cábula FRACÆ</a></h3>
+            <h3><a href="https://docs.google.com/spreadsheets/d/1f3O_a2X_Vu-LTchIh0ZXOqw_OIp-l8RoCYJsLTFm8CQ/edit?gid=1218093059#gid=1218093059" target="_blank">Cábula FRACÆ</a></h3>
           </li>
         </ul>
         

@@ -36,15 +36,20 @@ export default function Home() {
         </p>
 
         <h2>Historial</h2>
-        <h3>Prémio Pastor - 2022</h3>
+        <h3 class="premio">Prémio Pastor - 2022</h3>
         <h4>Atribuído ao Boris por ser o Tuno Mais Caloiro</h4>
         <img class="premio-pastor" src="/premios/premio_pastor1.png" alt="Premio Pastor" width="92%" />
         <img class="premio-pastor" src="/premios/premio_pastor2.png" alt="Premio Pastor" width="92%" />
 
-        <h3>Prémio Moregado - 2023</h3>
+        <h3 class="premio">Prémio Moregado - 2023</h3>
         <h4>Atribuído ao Carl por ser o Tuno Mais Cadáver</h4>
         <img class="center premio-moregado" src="/premios/premio_moregado1.png" alt="Premio Moregado" width="92%" />
         <img class="center premio-moregado" src="/premios/premio_moregado2.png" alt="Premio Moregado" width="92%" />
+
+        <h3 class="premio">Prémio Faísca McCona - 2024</h3>
+        <h4>Atribuído ao Pirúgrafo por ser o Tuno Mais Cringe</h4>
+        <img class="center premio-moregado" src="/premios/premio_faisca1.jpg" alt="Premio Faísca McCona" width="92%" />
+        <img class="center premio-moregado" src="/premios/premio_faisca2.jpg" alt="Premio Faísca McCona" width="92%" />
 
       </main>
             

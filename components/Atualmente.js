@@ -10,72 +10,41 @@ export default function Atualmente() {
         const response = await fetch('atualmente.csv');
         const textData = await response.text();
         const parsedData = Papa.parse(textData, { header: true }).data;
-        
-        console.log(parsedData);
 
-        for (let i = 0; i < parsedData.length; i++) {
-            const card = generateCard(
-            parsedData[i].nomeTuna,
-            parsedData[i].nomeCaloiro,
-            parsedData[i].imagem_pessoal,
-            parsedData[i].nomeCivil,
-            parsedData[i].instrumento,
-            parsedData[i].imagem_lateral
-            );
-            
-            const cardContainer = document.getElementById("card-container");
-            cardContainer.appendChild(card);
-            
-            if (i == -1){
-              var text = document.createElement("div");
-              text.id = "Titulo-Hierarquia"
-              text.innerHTML = "Tesoureiro FRACAE";
-              text.style.marginTop = "30px";
-              cardContainer.appendChild(text);
-            }
+        // Define titles for specific indexes
+        const titles = [
+          "Tesoureiro FRACAE",
+          "Tarefeiro FRACAE",
+          "Ensaiador FRACAE",
+          "Atuador FRACAE",
+          "RP FRACAE",
+          "Caloiros"
+        ];
 
-            if(i == 0){
-                var text = document.createElement("div");
-                text.id = "Titulo-Hierarquia"
-                text.innerHTML = "Atuador FRACAE";
-                text.style.marginTop = "20px";
-                cardContainer.appendChild(text);
-            }
-        
-            if (i == 1){
-                var text = document.createElement("div");
-                text.id = "Titulo-Hierarquia"
-                text.innerHTML = "Ensaiador FRACAE";
-                text.style.marginTop = "20px";
-                cardContainer.appendChild(text);
-            }
-        
-            if (i == 2){
-                var text = document.createElement("div");
-                text.id = "Titulo-Hierarquia"
-                text.innerHTML = "Tarefeiro FRACAE";
-                text.style.marginBottom = "20px";
-                text.style.marginTop = "20px";
-                cardContainer.appendChild(text);
-            }
-        
-            if (i == 3){
-                var text = document.createElement("div");
-                text.id = "Titulo-Hierarquia"
-                text.innerHTML = "RP";
-                text.style.marginTop = "20px";
-                cardContainer.appendChild(text);
-            }
+        const cardContainer = document.getElementById("card-container");
 
-            if (i == 4){
-              var text = document.createElement("div");
-              text.id = "Titulo-Hierarquia"
-              text.innerHTML = "Caloiros";
-              text.style.marginTop = "20px";
-              cardContainer.appendChild(text);
+        parsedData.forEach((item, index) => {
+          const card = generateCard(
+            item.nomeTuna,
+            item.nomeCaloiro,
+            item.imagem_pessoal,
+            item.nomeCivil,
+            item.instrumento,
+            item.imagem_lateral
+          );
+
+          // Add a title for specific indexes
+          if (titles[index]) {
+            const text = document.createElement("div");
+            text.id = "Titulo-Hierarquia";
+            text.innerHTML = titles[index];
+            text.style.marginTop = "20px";
+            cardContainer.appendChild(text);
           }
-        }
-   
+
+          cardContainer.appendChild(card);
+        });
+
         setData(parsedData);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -87,13 +56,14 @@ export default function Atualmente() {
 }
 
 
+
 function generateCard(nomeTuna, nomeCaloiro, imagem_pessoal,nomeCivil, instrumento, imageSrc) {
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("card-container");
     
     if(imagem_pessoal != ""){
     const cardImage = document.createElement("img");
-    cardImage.src = `caloiros/${imagem_pessoal}.jpg`;
+    cardImage.src = `caloiros/atualmente/${imagem_pessoal}.jpg`;
     cardImage.alt = nomeTuna;
     cardImage.classList.add("card-imagem_pessoal");
     cardContainer.appendChild(cardImage);

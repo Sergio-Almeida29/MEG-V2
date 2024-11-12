@@ -44,7 +44,7 @@ function generateCard(nomeTuna, nomeCaloiro, imagem_pessoal,nomeCivil, instrumen
     
     if(imagem_pessoal != ""){
     const cardImage = document.createElement("img");
-    cardImage.src = `caloiros/${imagem_pessoal}.jpg`;
+    cardImage.src = `caloiros/antigos/${imagem_pessoal}.jpg`;
     cardImage.alt = nomeTuna;
     cardImage.classList.add("card-imagem_pessoal");
     cardContainer.appendChild(cardImage);
