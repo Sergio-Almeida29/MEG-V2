@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: #7c0e00;
+  background-color: #8C2D19;
   z-index: 1000;
 }
 
@@ -41,32 +41,34 @@
   color: #333;
   background-color: #ddd;
   border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-.menu {
-  display: none;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-
-.menu.open {
-  display: flex;
-  max-height: 30em;
+.menuContainer:hover {
+  background-color: #bbb; /* Darker background on hover */
 }
 
 /* Dropdown menu styling */
 .dropdownMenu {
   position: absolute;
   top: 100%; /* Position directly below the header */
-  align-items: center; /* Ensure items are centered */
+  align-items: center;
   margin: 0.5em 5em 0 0;
   color: #333;
   background-color: #ddd;
   border-radius: 5px;
-  max-height: 25em; /* Set a max-height without enabling scroll */
-  text-align: center; /* Center text inside the menu */
+  max-height: 0; /* Start with zero height */
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease; /* Smooth dropdown effect */
+  opacity: 0;
+  visibility: hidden; /* Initially hidden */
   width: 95%;
+}
+
+.dropdownMenu.open {
+  max-height: 20em; /* Adjust as needed */
+  opacity: 1;
+  visibility: visible;
 }
 
 .dropdownMenu ul {
@@ -77,18 +79,21 @@
 
 .dropdownMenu li {
   padding: 0.5em;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.dropdownMenu li:hover {
+  background-color: #bbb; /* Change background on hover */
 }
 
 .dropdownMenu li a {
-  display: block; /* Ensure the anchor takes up the full width of the list item */
+  display: block;
   color: #333;
   text-decoration: none;
-  font-size: 0.9em; /* Reduce font size to make the options smaller */
+  font-size: 0.9em;
 }
 
-
-
-
+/* Title container styling */
 .titleContainer {
   display: flex;
   flex-direction: column;
