@@ -220,3 +220,32 @@ ul li a:hover {
   color: grey; /* Change anchor text color on hover */
 }
 
+/* Overlay for zoom */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.zoomed-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.zoomed-image:hover {
+  transform: scale(1.05);
+}
+
+/* Prevent scrolling when zoomed */
+.noScroll {
+  overflow: hidden;
+}

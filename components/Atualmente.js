@@ -11,19 +11,9 @@ export default function Atualmente() {
         const textData = await response.text();
         const parsedData = Papa.parse(textData, { header: true }).data;
 
-        // Define titles for specific indexes
-        const titles = [
-          "Tesoureiro FRACAE",
-          "Tarefeiro FRACAE",
-          "Ensaiador FRACAE",
-          "Atuador FRACAE",
-          "RP FRACAE",
-          "Caloiros"
-        ];
+        const cardContainer = document.getElementById('card-container');
 
-        const cardContainer = document.getElementById("card-container");
-
-        parsedData.forEach((item, index) => {
+        parsedData.forEach((item) => {
           const card = generateCard(
             item.nomeTuna,
             item.nomeCaloiro,
@@ -32,16 +22,6 @@ export default function Atualmente() {
             item.instrumento,
             item.imagem_lateral
           );
-
-          // Add a title for specific indexes
-          if (titles[index]) {
-            const text = document.createElement("div");
-            text.id = "Titulo-Hierarquia";
-            text.innerHTML = titles[index];
-            text.style.marginTop = "20px";
-            cardContainer.appendChild(text);
-          }
-
           cardContainer.appendChild(card);
         });
 
@@ -53,55 +33,44 @@ export default function Atualmente() {
 
     fetchData();
   }, []);
-}
 
+  const generateCard = (nomeTuna, nomeCaloiro, imagem_pessoal, nomeCivil, instrumento, imageSrc) => {
+    const cardContainer = document.createElement('div');
+    cardContainer.classList.add('card-container');
 
-
-function generateCard(nomeTuna, nomeCaloiro, imagem_pessoal,nomeCivil, instrumento, imageSrc) {
-    const cardContainer = document.createElement("div");
-    cardContainer.classList.add("card-container");
-    
-    if(imagem_pessoal != ""){
-    const cardImage = document.createElement("img");
-    cardImage.src = `caloiros/atualmente/${imagem_pessoal}.jpg`;
-    cardImage.alt = nomeTuna;
-    cardImage.classList.add("card-imagem_pessoal");
-    cardContainer.appendChild(cardImage);
+    if (imagem_pessoal) {
+      const cardImage = document.createElement('img');
+      cardImage.src = `caloiros/atualmente/${imagem_pessoal}.jpg`;
+      cardImage.alt = nomeTuna;
+      cardImage.classList.add('card-imagem_pessoal');
+      cardImage.addEventListener('click', () => openZoom(cardImage.src));
+      cardContainer.appendChild(cardImage);
     }
-  
-    const cardImagemLateral = document.createElement("img");
-    cardImagemLateral.src = imageSrc;
-    cardImagemLateral.alt = instrumento;
-    cardImagemLateral.classList.add("card-imagem_lateral");
-  
-    const cardInfo = document.createElement("div");
-    cardInfo.classList.add("card-info");
-  
-    const cardNomeCivil = document.createElement("h2");
-    cardNomeCivil.textContent = nomeCivil;
-    cardNomeCivil.classList.add("card-nomeCivil");
-  
-  
-    const cardNomeTuna = document.createElement("h2");
-    cardNomeTuna.textContent = nomeTuna;
-    cardNomeTuna.classList.add("card-nomeTuna");
-  
-    const cardNomeCaloiro = document.createElement("p");
-    cardNomeCaloiro.textContent = nomeCaloiro
-    cardNomeCaloiro.classList.add("card-nomeCaloiro");
-  
-    const cardInstrumento = document.createElement("p");
-    cardInstrumento.textContent = `Instrumento: ${instrumento}`;
-    cardInstrumento.classList.add("card-instrumento");
-  
-    cardInfo.appendChild(cardNomeTuna);
-    cardInfo.appendChild(cardNomeCaloiro);
-    cardInfo.appendChild(cardNomeCivil);
-    cardInfo.appendChild(cardInstrumento);
-  
-  
-    cardContainer.appendChild(cardImagemLateral);
-    cardContainer.appendChild(cardInfo);
-  
+
     return cardContainer;
-  }
+  };
+
+  const openZoom = (imageSrc) => {
+    const overlay = document.createElement('div');
+    overlay.classList.add('image-overlay');
+
+    const zoomedImage = document.createElement('img');
+    zoomedImage.src = imageSrc;
+    zoomedImage.classList.add('zoomed-image');
+
+    overlay.appendChild(zoomedImage);
+    overlay.addEventListener('click', () => {
+      document.body.removeChild(overlay);
+      document.body.classList.remove('noScroll');
+    });
+
+    document.body.appendChild(overlay);
+    document.body.classList.add('noScroll');
+  };
+
+  return (
+    <div id="card-container">
+      {/* Cards will be appended here */}
+    </div>
+  );
+}
