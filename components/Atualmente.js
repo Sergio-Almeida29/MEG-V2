@@ -34,21 +34,30 @@ export default function Atualmente() {
     fetchData();
   }, []);
 
-  const generateCard = (nomeTuna, nomeCaloiro, imagem_pessoal, nomeCivil, instrumento, imageSrc) => {
-    const cardContainer = document.createElement('div');
-    cardContainer.classList.add('card-container');
-
-    if (imagem_pessoal) {
-      const cardImage = document.createElement('img');
+  function generateCard(nomeTuna, nomeCaloiro, imagem_pessoal, nomeCivil, instrumento, imageSrc) {
+    const cardContainer = document.createElement("div");
+    cardContainer.classList.add("card-container");
+    
+    if(imagem_pessoal != "") {
+      const cardImage = document.createElement("img");
       cardImage.src = `caloiros/atualmente/${imagem_pessoal}.jpg`;
       cardImage.alt = nomeTuna;
-      cardImage.classList.add('card-imagem_pessoal');
-      cardImage.addEventListener('click', () => openZoom(cardImage.src));
+      cardImage.classList.add("card-imagem_pessoal");
+      
+      // Add click event to open modal with the full-size image
+      cardImage.addEventListener("click", () => {
+        openImageModal(cardImage.src);
+      });
+      
       cardContainer.appendChild(cardImage);
     }
-
+  
+    // Remaining card elements...
+    // (Keep the rest of your original code here)
+  
     return cardContainer;
-  };
+  }
+  
 
   const openZoom = (imageSrc) => {
     const overlay = document.createElement('div');
@@ -73,4 +82,24 @@ export default function Atualmente() {
       {/* Cards will be appended here */}
     </div>
   );
+
+  function openImageModal(src) {
+    let modal = document.querySelector(".image-modal");
+  
+    if (!modal) {
+      // Create modal element if it doesn't exist
+      modal = document.createElement("div");
+      modal.classList.add("image-modal");
+      document.body.appendChild(modal);
+  
+      modal.addEventListener("click", () => {
+        modal.classList.remove("show");
+      });
+    }
+  
+    // Set the image source and display the modal
+    modal.innerHTML = `<img src="${src}" alt="Zoomed Image">`;
+    modal.classList.add("show");
+  }
+  
 }
